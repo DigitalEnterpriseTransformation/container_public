@@ -8,11 +8,11 @@ RUN set -eux; \
     && apt install -y --no-install-recommends wget \
     && rm -rf /var/lib/apt/lists/*
 
-ENV NGINX_VERSION 1.24.0
-ENV ZLIB_VERSION 1.3.1
-ENV VTS_VERSION 0.2.2
-ENV GEOIP2_VERSION 3.4
-ENV LIBMAXMINDDB_VERSION 1.8.0
+ENV NGINX_VERSION=1.24.0
+ENV ZLIB_VERSION=1.3.1
+ENV VTS_VERSION=0.2.2
+ENV GEOIP2_VERSION=3.4
+ENV LIBMAXMINDDB_VERSION=1.8.0
 
 COPY nginx-module-vts-$VTS_VERSION.tar.gz /tmp/vts-$VTS_VERSION.tar.gz
 COPY ngx_http_geoip2_module-$GEOIP2_VERSION.tar.gz /tmp/geoip2-$GEOIP2_VERSION.tar.gz

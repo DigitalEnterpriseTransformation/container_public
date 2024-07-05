@@ -11,13 +11,13 @@ RUN set -eux; \
     && apt install -y --no-install-recommends tzdata wget openjdk-11-jdk \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
-ENV PATH $JAVA_HOME/bin:$PATH
-ENV LANG C.UTF-8
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENV LANG=C.UTF-8
 
-ENV KAFKA_VERSION 3.6.2
-ENV ZOO_MY_ID 1
-ENV ZOO_SERVERS server.1=localhost:2888:3888;
+ENV KAFKA_VERSION=3.6.2
+ENV ZOO_MY_ID=1
+ENV ZOO_SERVERS="server.1=localhost:2888:3888;"
 
 #数据存储
 VOLUME /zookeeper

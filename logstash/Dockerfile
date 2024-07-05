@@ -4,7 +4,7 @@ LABEL name="logstash" veriosn="8.13.2" author="wintech-nano"
 
 USER root
 ENV TZ=Asia/Shanghai
-ENV ELASTICSEARCH_PORT 9200
+ENV ELASTICSEARCH_PORT=9200
 COPY replace.sh /replace.sh
 RUN set -eux; \
     echo "${TZ}" > /etc/timezone \

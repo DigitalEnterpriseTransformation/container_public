@@ -11,21 +11,21 @@ RUN set -eux; \
     && apt install -y --no-install-recommends tzdata wget openjdk-11-jdk \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
-ENV PATH $JAVA_HOME/bin:$PATH
-ENV LANG C.UTF-8
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENV LANG=C.UTF-8
 
 WORKDIR /opt/tomcat9
-ENV TOMCAT_MAJOR 9
-ENV TOMCAT_VERSION 9.0.90
+ENV TOMCAT_MAJOR=9
+ENV TOMCAT_VERSION=9.0.90
 
-ENV OPEN_APM false
-ENV PROJECT_NAME "project"
-ENV APM_IP_PROTOCOL "http"
-ENV APM_IP "127.0.0.1"
-ENV APM_PORT "8200"
-ENV APM_ENV dev
-ENV APM_APPLICATION_PACKAGES "com.package"
+ENV OPEN_APM=false
+ENV PROJECT_NAME="project"
+ENV APM_IP_PROTOCOL="http"
+ENV APM_IP="127.0.0.1"
+ENV APM_PORT="8200"
+ENV APM_ENV=dev
+ENV APM_APPLICATION_PACKAGES="com.package"
 
 RUN set -eux; \
     apt update  \

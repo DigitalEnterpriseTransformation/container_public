@@ -3,7 +3,7 @@ MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="elasticsearch" veriosn="8.13.2" author="wintech-nano"
 
 ENV TZ=Asia/Shanghai
-ENV ELASTICSEARCH_VERSION 8.13.2
+ENV ELASTICSEARCH_VERSION=8.13.2
 USER root
 ADD add_plugins.sh /tmp/add_plugins.sh
 RUN set -eux; \

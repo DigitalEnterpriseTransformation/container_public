@@ -2,7 +2,7 @@ FROM ubuntu:jammy
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="nginx_vts_exporter" veriosn="1.7.0" author="wintech-nano"
 
-ENV NGINX_VTS_EXPORTER_VERSION 0.10.8
+ENV NGINX_VTS_EXPORTER_VERSION=0.10.8
 
 COPY start.sh /start.sh
 ENV NGINX_STATUS="http://localhost/status/format/json"

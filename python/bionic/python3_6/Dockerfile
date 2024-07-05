@@ -11,6 +11,6 @@ RUN set -eux; \
     && apt install -y --no-install-recommends tzdata wget python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 CMD ["/bin/bash"]

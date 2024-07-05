@@ -3,7 +3,7 @@ MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="prometheus" veriosn="2.45.4" author="wintech-nano"
 
 ENV TZ=Asia/Shanghai
-ENV PROMETHEUS_VERSION 2.45.4
+ENV PROMETHEUS_VERSION=2.45.4
 RUN set -eux; \
     echo "${TZ}" > /etc/timezone \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \

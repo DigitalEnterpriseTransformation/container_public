@@ -11,8 +11,8 @@ RUN set -eux; \
     && apt install -y --no-install-recommends tzdata wget \
     && rm -rf /var/lib/apt/lists/*
 
-ENV ZOOKEEPER_EXPORTER_VERSION 1.1.0
-ENV ZOOKEEPER_PORT 2181
+ENV ZOOKEEPER_EXPORTER_VERSION=1.1.0
+ENV ZOOKEEPER_PORT=2181
 
 COPY start.sh /start.sh
 RUN set -eux; \

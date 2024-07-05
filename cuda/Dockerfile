@@ -11,16 +11,16 @@ RUN set -eux; \
     && apt install -y tzdata wget \
     && rm -rf /var/lib/apt/lists/*
 
-ENV ANACONDA_VERSION 4.12.0
+ENV ANACONDA_VERSION=4.12.0
 
 RUN set -eux; \
     wget "https://repo.anaconda.com/miniconda/Miniconda3-py38_${ANACONDA_VERSION}-Linux-x86_64.sh" --no-check-certificate \
     && bash "Miniconda3-py38_${ANACONDA_VERSION}-Linux-x86_64.sh" -b -p /opt/conda \
     && rm "Miniconda3-py38_${ANACONDA_VERSION}-Linux-x86_64.sh"
 
-ENV CONDA_HOME /opt/conda
-ENV PATH $CONDA_HOME/bin:$PATH
-ENV LANG C.UTF-8
+ENV CONDA_HOME=/opt/conda
+ENV PATH=$CONDA_HOME/bin:$PATH
+ENV LANG=C.UTF-8
 
 RUN set -eux; \
     wget "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.1-1_all.deb" \

@@ -6,7 +6,7 @@ COPY start.sh /start.sh
 COPY add_key.sh /add_key.sh
 
 ENV TZ=Asia/Shanghai
-ENV ELASTICSEARCH_VERSION 8.x
+ENV ELASTICSEARCH_VERSION=8.x
 RUN set -eux; \
     echo "${TZ}" > /etc/timezone \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \

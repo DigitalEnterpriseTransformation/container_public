@@ -2,8 +2,8 @@ FROM ubuntu:jammy
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="kafka_exporter" veriosn="1.7.0" author="wintech-nano"
 
-ENV KAFKA_EXPORTER_VERSION 1.7.0
-ENV KAFKA_PORT 9092
+ENV KAFKA_EXPORTER_VERSION=1.7.0
+ENV KAFKA_PORT=9092
 ENV TZ=Asia/Shanghai
 RUN set -eux; \
     echo "${TZ}" > /etc/timezone \
