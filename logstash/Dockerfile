@@ -1,6 +1,6 @@
-FROM logstash/logstash:8.13.2
+FROM logstash/logstash:7.17.22
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
-LABEL name="logstash" veriosn="8.13.2" author="wintech-nano"
+LABEL name="logstash" veriosn="7.17.22" author="wintech-nano"
 
 USER root
 ENV TZ=Asia/Shanghai

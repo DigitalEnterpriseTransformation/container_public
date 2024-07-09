@@ -1,6 +1,6 @@
-FROM docker.elastic.co/apm/apm-server:8.13.2
+FROM docker.elastic.co/apm/apm-server:7.17.22
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
-LABEL name="apm-server" veriosn="8.13.2" author="wintech-nano"
+LABEL name="apm-server" veriosn="7.17.22" author="wintech-nano"
 
 ENV TZ=Asia/Shanghai
 USER root

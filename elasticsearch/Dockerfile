@@ -1,9 +1,9 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:8.13.2
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.17.22
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
-LABEL name="elasticsearch" veriosn="8.13.2" author="wintech-nano"
+LABEL name="elasticsearch" veriosn="7.17.22" author="wintech-nano"
 
 ENV TZ=Asia/Shanghai
-ENV ELASTICSEARCH_VERSION=8.13.2
+ENV ELASTICSEARCH_VERSION=7.17.22
 USER root
 ADD add_plugins.sh /tmp/add_plugins.sh
 RUN set -eux; \
