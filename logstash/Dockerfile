@@ -1,4 +1,4 @@
-FROM logstash/logstash:7.17.22
+FROM docker.elastic.co/logstash/logstash:7.17.22
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="logstash" veriosn="7.17.22" author="wintech-nano"
 

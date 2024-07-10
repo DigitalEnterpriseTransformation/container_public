@@ -1,4 +1,4 @@
-FROM harbor.wintech-nano.com/library/ubuntu:jammy as builder
+FROM ubuntu:jammy as builder
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="nginx" veriosn="1.24.0" author="wintech-nano"
 
@@ -104,7 +104,7 @@ RUN set -eux; \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /etc/nginx/sites-enabled-map
 
-FROM harbor.wintech-nano.com/library/ubuntu:jammy
+FROM ubuntu:jammy
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="nginx" veriosn="1.24.0" author="wintech-nano"
 
