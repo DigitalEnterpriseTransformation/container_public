@@ -2,6 +2,16 @@ FROM ubuntu:jammy
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="nginx_vts_exporter" veriosn="1.7.0" author="wintech-nano"
 
+ENV TZ=Asia/Shanghai
+USER root
+RUN set -eux; \
+    echo "${TZ}" > /etc/timezone \
+    && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
+    && apt update  \
+    && apt upgrade -y \
+    && apt install -y --no-install-recommends tzdata wget \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV NGINX_VTS_EXPORTER_VERSION=0.10.8
 
 COPY start.sh /start.sh
