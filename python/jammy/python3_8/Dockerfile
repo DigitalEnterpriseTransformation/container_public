@@ -17,7 +17,7 @@ ENV PYTHON_VERSION=3.8.19
 RUN set -eux; \
     wget "https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz"  --no-check-certificate \
     && tar -xvf Python-${PYTHON_VERSION}.tar.xz -C /tmp \
-    && cd /tmp/Python-${PYTHON_VERSION}.tar.xz \
+    && cd /tmp/Python-${PYTHON_VERSION} \
     && ./configure --enable-optimizations \
     && make \
     && make install
