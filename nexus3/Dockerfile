@@ -9,3 +9,4 @@ RUN set -eux; \
     && chmod -R 777 /opt/sonatype-work
 
 USER nexus
+CMD ["/bin/bash"]
