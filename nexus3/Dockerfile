@@ -7,6 +7,3 @@ USER root
 RUN set -eux; \
     mkdir -p /opt/sonatype-work/nexus3/tmp \
     && chmod -R 777 /opt/sonatype-work
-
-USER nexus
-CMD ["/bin/bash"]
