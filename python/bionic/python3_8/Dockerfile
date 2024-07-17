@@ -10,7 +10,7 @@ RUN set -eux; \
     && apt update  \
     && apt upgrade -y \
     && apt install -y --no-install-recommends tzdata wget \
-    && apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev \
+    && apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHON_VERSION=3.8.19
