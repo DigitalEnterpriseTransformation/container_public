@@ -14,10 +14,6 @@ ENV VTS_VERSION=0.2.2
 ENV GEOIP2_VERSION=3.4
 ENV LIBMAXMINDDB_VERSION=1.8.0
 
-COPY nginx-module-vts-$VTS_VERSION.tar.gz /tmp/vts-$VTS_VERSION.tar.gz
-COPY ngx_http_geoip2_module-$GEOIP2_VERSION.tar.gz /tmp/geoip2-$GEOIP2_VERSION.tar.gz
-COPY libmaxminddb-$LIBMAXMINDDB_VERSION.tar.gz /tmp/libmaxminddb-$LIBMAXMINDDB_VERSION.tar.gz
-
 RUN set -eux; \
     addgroup --system --gid 101 nginx \
     && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 1001 nginx \
@@ -32,10 +28,13 @@ RUN set -eux; \
     && make \
     && make install \
     && mkdir -p /tmp/vts \
+     && wget -O /tmp/vts-$VTS_VERSION.tar.gz "https://github.com/vozlt/nginx-module-vts/archive/refs/tags/v$VTS_VERSION.tar.gz" --no-check-certificate \
     && tar -zxvf /tmp/vts-$VTS_VERSION.tar.gz -C /tmp/vts \
     && mkdir -p /tmp/geoip \
+    && wget -O /tmp/geoip2-$GEOIP2_VERSION.tar.gz "https://github.com/leev/ngx_http_geoip2_module/archive/refs/tags/$GEOIP2_VERSION.tar.gz" --no-check-certificate \
     && tar -zxvf /tmp/geoip2-$GEOIP2_VERSION.tar.gz -C /tmp/geoip \
     && mkdir -p /tmp/libmaxminddb \
+    && wget -O /tmp/libmaxminddb-$LIBMAXMINDDB_VERSION.tar.gz "https://github.com/maxmind/libmaxminddb/releases/download/$LIBMAXMINDDB_VERSION/libmaxminddb-$LIBMAXMINDDB_VERSION.tar.gz" --no-check-certificate \
     && tar -zxvf /tmp/libmaxminddb-$LIBMAXMINDDB_VERSION.tar.gz -C /tmp/libmaxminddb \
     && cd /tmp/libmaxminddb/libmaxminddb-$LIBMAXMINDDB_VERSION \
     && ./configure \
