@@ -4,4 +4,3 @@ if [ -f /var/filebeat/filebeat.yml ]; then
 fi
 service filebeat restart
 tail -f /dev/null
-
