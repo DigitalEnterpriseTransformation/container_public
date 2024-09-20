@@ -1,4 +1,5 @@
-FROM docker.elastic.co/apm/apm-server:7.17.22
+ARG BASE_IMAGE=docker.elastic.co/apm/apm-server:7.17.22
+FROM ${BASE_IMAGE}
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="apm-server" veriosn="7.17.22" author="wintech-nano"
 
