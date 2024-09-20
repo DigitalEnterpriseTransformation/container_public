@@ -1,9 +1,10 @@
-FROM ubuntu:jammy
+ARG BASE_IMAGE=ubuntu:jammy
+FROM ${BASE_IMAGE}
 MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="jdk" author="wintech-nano"
 
-ARG JDK_MAIN_VERSION
-ENV JDK_MAIN_VERSION=${JDK_MAIN_VERSION:-11}
+ARG JDK_MAIN_VERSION=11
+ENV JDK_MAIN_VERSION=${JDK_MAIN_VERSION}
 
 ENV TZ=Asia/Shanghai
 RUN set -eux; \
