@@ -4,6 +4,8 @@ MAINTAINER wintech-nano<webmaster@wintech-nano.com>
 LABEL name="apm-server" veriosn="7.17.22" author="wintech-nano"
 
 ENV TZ=Asia/Shanghai
+ENV LANG=C.UTF-8
+
 USER root
 RUN set -eux; \
     echo "${TZ}" > /etc/timezone \
